@@ -28,7 +28,7 @@ constructor(name:string){
     this.name = name;
 }
 decreaseHealth(){
-    this.fuel -= 30
+    this.fuel -= 25
 }
 increaseHealth(){
     this.fuel = 100
@@ -69,7 +69,7 @@ switch(option.action){
     console.log(chalk.bold.blueBright(`${answer.name} fuel is ${player.fuel}`))
     console.log(chalk.bold.bgBlue(`${answer.enemies} fuel is ${enemies.fuel}`))
     if (player.fuel <= 0){
-        console.log(chalk.bold.redBright(`${answer.enemies} has dead ! game over`))
+        console.log(chalk.bold.redBright(`${answer.name} lost better luck next time`))
         condition = false
     }
     }
@@ -77,7 +77,7 @@ switch(option.action){
     enemies.decreaseHealth()
     console.log(chalk.bold.blueBright(`${answer.name} fuel is ${player.fuel}`))
     console.log(chalk.bold.bgBlue(`${answer.enemies} fuel is ${enemies.fuel}`))
-    if (player.fuel <= 0){
+    if (enemies.fuel <= 0){
         console.log(chalk.bold.red(`${answer.enemies} has dead ! game over`))
         condition = false
     }
